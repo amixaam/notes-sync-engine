@@ -5,8 +5,12 @@
     @apply font-sans;
   }
 
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
-    @apply grid place-items-center min-w-[320px] min-h-screen relative m-0 bg-background text-foreground;
+    @apply block min-w-[320px] min-h-screen relative m-0 bg-background text-foreground;
   }
 
   #root {
