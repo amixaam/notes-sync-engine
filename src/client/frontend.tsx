@@ -9,7 +9,12 @@ import { StrictMode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
+import { initializeTheme } from "./lib/theme";
 
+const disposeTheme = initializeTheme();
+if (import.meta.hot) {
+  import.meta.hot.dispose(() => disposeTheme());
+}
 const elem = document.getElementById("root")!;
 const queryClient = new QueryClient();
 const app = (
